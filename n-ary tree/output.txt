@@ -1,0 +1,14 @@
+
+ node=1 parent= sibling= children=2 3 4 
+ node=2 parent=1  sibling=3 4  children=5 6 
+ node=5 parent=2  sibling=6  children=7 
+ node=7 parent=5  sibling= children=8 
+ node=8 parent=7  sibling= children=
+ node=6 parent=2  sibling=5  children=9 
+ node=9 parent=6  sibling= children=
+ node=3 parent=1  sibling=2 4  children=
+ node=4 parent=1  sibling=2 3  children=11 12 13 
+ node=11 parent=4  sibling=12 13  children=14 
+ node=14 parent=11  sibling= children=
+ node=12 parent=4  sibling=11 13  children=
+ node=13 parent=4  sibling=11 12  children=

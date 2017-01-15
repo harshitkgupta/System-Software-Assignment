@@ -1,0 +1,84 @@
+#!/bin/bash -f
+usage ()
+{	
+	echo usage : `basename $0` options
+cat << EOF
+OPTIONS :
+	-h	Show this usage
+	-f 	format of files
+	-i 	file name
+	-u	url of website	
+	-o	output folder	
+EOF
+
+}	
+FILENAME=
+FORMAT=
+WEBPAGE=
+OUTPUT=
+while getopts ":hf:i:u:o:" opt 
+do
+case $opt in
+h) 	usage
+	exit 1
+	;;
+f)	FORMAT=$OPTARG
+	;;
+i)	FILENAME=$OPTARG
+	;;
+u)	WEBPAGE=$OPTARG
+	;;
+o)	OUTPUT=$OPTARG
+	;;
+?)	usage
+	exit 1
+	;;
+esac
+done
+
+if [ -z $FORMAT ]
+then
+	usage
+	echo 'format of file is also needed'
+	exit 1
+fi
+
+if [ -z $FILENAME ] && [ -z $WEBPAGE ]
+then
+	usage
+	echo 'either name of file or  url of WEBPAGE is needed'
+	exit 1
+fi
+if [ -z $OUTPUT ]
+then 
+	OUTPUT="./"
+fi
+	
+
+		
+if [  ${#WEBPAGE} != 0 ]
+then
+	status=`curl -s --head $WEBPAGE |head -n 1|grep 200`
+	
+	if [ -z $status ]
+	then 
+		echo "Error: either website name is wrong or it is temporarly down"
+		exit 1	
+	fi
+	
+	wget --accept $FORMAT  -e robots=off --no-check-certificate -r -P $OUTPUT $WEBPAGE
+fi
+
+if [ ${#FILENAME} != 0 ]
+then
+	if [ -f $FILENAME ]
+	then
+		grep -o "http://[^'\"<>]*\.$FORMAT" $FILENAME >urllist
+		wget    -e robots=off --no-check-certificate -P $OUTPUT -i urllist
+	else
+		echo "Error : file does not exist"	
+	fi
+fi
+
+
+

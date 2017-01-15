@@ -1,0 +1,7 @@
+V3 3
+FL C:/Users/Anna/keyboard_abhishek_1/keyboard_entity.vhd 2013/10/24.17:41:15 O.40d
+EN work/key 1382616683 FL C:/Users/Anna/keyboard_abhishek_1/keyboard_entity.vhd \
+      PB ieee/std_logic_1164 1296775758 PB ieee/std_logic_arith 1296775759 \
+      PB ieee/STD_LOGIC_UNSIGNED 1296775760
+AR work/key/behave 1382616684 \
+      FL C:/Users/Anna/keyboard_abhishek_1/keyboard_entity.vhd EN work/key 1382616683

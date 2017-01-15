@@ -1,0 +1,36 @@
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s200-ft256-4 key.ngc key.ngd  
+map -intstyle ise -p xc3s200-ft256-4 -cm area -ir off -pr off -c 100 -o key_map.ncd key.ngd key.pcf 
+par -w -intstyle ise -ol high -t 1 key_map.ncd key.ncd key.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml key.twx key.ncd -o key.twr key.pcf 
+bitgen -intstyle ise -f key.ut key.ncd 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin1.ucf -p xc3s200-ft256-4 key.ngc key.ngd  
+map -intstyle ise -p xc3s200-ft256-4 -cm area -ir off -pr off -c 100 -o key_map.ncd key.ngd key.pcf 
+par -w -intstyle ise -ol high -t 1 key_map.ncd key.ncd key.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml key.twx key.ncd -o key.twr key.pcf -ucf pin1.ucf 
+bitgen -intstyle ise -f key.ut key.ncd 
+xst -intstyle ise -ifn "C:/Users/Anna/keyboard_abhishek_1/key.xst" -ofn "C:/Users/Anna/keyboard_abhishek_1/key.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc pin1.ucf -p xc3s200-ft256-4 key.ngc key.ngd  
+map -intstyle ise -p xc3s200-ft256-4 -cm area -ir off -pr off -c 100 -o key_map.ncd key.ngd key.pcf 
+par -w -intstyle ise -ol high -t 1 key_map.ncd key.ncd key.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml key.twx key.ncd -o key.twr key.pcf -ucf pin1.ucf 
+bitgen -intstyle ise -f key.ut key.ncd 

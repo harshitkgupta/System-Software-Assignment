@@ -1,0 +1,79 @@
+Abhishek Ranjan(2013EET2365)
+Harshit Kumar Gupta(2013EET2369) 
+Prashant Kumar(2013EET2374)
+
+CONTENTS:
+
+	files
+	how to compile
+	how to run
+	description
+	interactive commands
+	references
+
+FILES:
+
+	1--> ftpserver.c (c file for server code)
+	2--> ftpclient.c (c file for client code)
+	3--> tcpservice.c (c code for functions needed by server and client)
+	4--> tcpservice.h (header file for function ,enum ans struct declaration )
+	5--> Makefile (compliation script)
+	6--> readme
+
+HOW TO COMPILE:
+	make all	
+	or
+	gcc -o ftpserver ftpserver.c tcpsercice.c
+	gcc -o ftpclient ftpclient.c tcpservice.c
+
+
+HOW to RUN:
+	server---> ./ftpserver
+	client---> ./ftpclient <IP of server> <port> 
+
+
+DESCRIPTION:
+     this  is an interactive file transfer program. ftpclient connects server and
+     then enters an interactive command mode.
+
+INTERACTIVE COMMANDS:
+     Once in interactive mode, sftp understands a set of commands.
+     Commands are case insensitive.  Pathnames that contain
+     spaces must be enclosed in quotes. 
+
+     close    Quit ftpclient.
+
+     cd path
+             Change remote directory to path.
+
+     chmod mode path
+             Change permissions of file path to mode at remote machine.  
+
+     get  [remote-path] [local-path]
+             Retrieve file at the remote-path and store it on the local machine.
+
+     lchmod mode path
+             Change permissions of file path to mode at local machine.  
+
+     lcd path
+             Change local directory to path.
+
+     lls [ls-options [path]]
+             Display local directory listing of either path or current direc‐
+             tory if path is not specified.  ls-options may contain any flags
+             supported by the local system's ls command.  
+
+     ls [ls-options [path]]
+             Display a remote directory listing of either path or the current
+             directory if path is not specified. ls-options may contain any flags
+             supported by the local system's ls command.   
+
+     put  [local-path] [remote-path]
+             Upload file at local-path and store it on the remote machine.  
+
+REFERENCES:
+	1. Tanenbaum, Andrew. Computer Networks. Fourth edition. New Delhi, India: Prentice Hall of India, 2003.
+	2. David Griffiths, Dawn Griffiths.Head First C .O'Reilly Media
+     
+
+

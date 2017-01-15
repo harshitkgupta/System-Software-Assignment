@@ -1,0 +1,8 @@
+\contentsline {chapter}{\numberline {}\leavevmode {\color {blue}PROBLEM STATEMENT}}{2}
+\contentsline {chapter}{\numberline {}\leavevmode {\color {blue}ABSTRACT}}{3}
+\contentsline {chapter}{\numberline {}\leavevmode {\color {blue}INTRODUCTION}}{4}
+\contentsline {chapter}{\numberline {}\leavevmode {\color {blue}SPECIFICATIONS AND ASSUMPTIONS}}{5}
+\contentsline {chapter}{\numberline {}\leavevmode {\color {blue}LOGIC USED/METHODOLOGY}}{6}
+\contentsline {chapter}{\numberline {}\leavevmode {\color {blue}FLOWCHART}}{8}
+\contentsline {chapter}{\numberline {}\leavevmode {\color {blue}OBSERVATIONS}}{9}
+\contentsline {chapter}{\numberline {}\leavevmode {\color {blue}RESULTS AND CONCLUSIONS}}{10}

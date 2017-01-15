@@ -1,0 +1,479 @@
+Release 13.1 - xst O.40d (nt64)
+Copyright (c) 1995-2011 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: key.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "key.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "key"
+Output Format                      : NGC
+Target Device                      : xc3s200-4-ft256
+
+---- Source Options
+Top Module Name                    : key
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Users/Anna/keyboard_abhishek_1/keyboard_entity.vhd" in Library work.
+Entity <key> compiled.
+Entity <key> (Architecture <behave>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <key> in library <work> (architecture <behave>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <key> in library <work> (Architecture <behave>).
+Entity <key> analyzed. Unit <key> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <key>.
+    Related source file is "C:/Users/Anna/keyboard_abhishek_1/keyboard_entity.vhd".
+WARNING:Xst:1780 - Signal <invalid> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <input_code> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <count> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Using one-hot encoding for signal <present_state>.
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <present_state> of Case statement line 0 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <present_state> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+    Found 8-bit register for signal <segment7>.
+    Found 1-bit register for signal <AN3>.
+    Found 1-bit register for signal <AN2>.
+    Found 1-bit register for signal <AN1>.
+    Found 1-bit register for signal <AN0>.
+    Found 1-bit register for signal <start1>.
+    Found 1-bit register for signal <parity1>.
+    Found 1-bit register for signal <stop1>.
+    Found 1-bit register for signal <break>.
+    Found 1-bit register for signal <caps>.
+    Found 13-bit up counter for signal <CTR>.
+    Found 13-bit comparator greater for signal <CTR$cmp_gt0000> created at line 216.
+    Found 800-bit register for signal <input_buffer>.
+    Found 1-bit xor2 for signal <input_buffer$xor0000>.
+    Found 11-bit register for signal <next_state>.
+    Found 1-bit register for signal <parity>.
+    Found 11-bit register for signal <present_state>.
+    Found 1-bit register for signal <sft>.
+    Found 1-bit register for signal <start>.
+    Found 1-bit register for signal <stop>.
+    Found 8-bit register for signal <temp_code>.
+INFO:Xst:738 - HDL ADVISOR - 800 flip-flops were inferred for signal <input_buffer>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   1 Counter(s).
+	inferred 851 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <key> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 13-bit up counter                                     : 1
+# Registers                                            : 25
+ 1-bit register                                        : 21
+ 11-bit register                                       : 2
+ 8-bit register                                        : 1
+ 800-bit register                                      : 1
+# Comparators                                          : 1
+ 13-bit comparator greater                             : 1
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 13-bit up counter                                     : 1
+# Registers                                            : 851
+ Flip-Flops                                            : 851
+# Comparators                                          : 1
+ 13-bit comparator greater                             : 1
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <key> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block key, actual ratio is 61.
+FlipFlop temp_code_0 has been replicated 3 time(s)
+FlipFlop temp_code_1 has been replicated 3 time(s)
+FlipFlop temp_code_2 has been replicated 2 time(s)
+FlipFlop temp_code_3 has been replicated 2 time(s)
+FlipFlop temp_code_4 has been replicated 1 time(s)
+FlipFlop temp_code_5 has been replicated 1 time(s)
+FlipFlop temp_code_6 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <key> :
+	Found 2-bit shift register for signal <parity1_OBUF>.
+Unit <key> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 876
+ Flip-Flops                                            : 876
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : key.ngr
+Top Level Output File Name         : key
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 18
+
+Cell Usage :
+# BELS                             : 3115
+#      GND                         : 1
+#      INV                         : 4
+#      LUT1                        : 13
+#      LUT2                        : 784
+#      LUT2_D                      : 2
+#      LUT2_L                      : 21
+#      LUT3                        : 424
+#      LUT3_D                      : 11
+#      LUT3_L                      : 397
+#      LUT4                        : 941
+#      LUT4_D                      : 91
+#      LUT4_L                      : 32
+#      MUXCY                       : 16
+#      MUXF5                       : 364
+#      VCC                         : 1
+#      XORCY                       : 13
+# FlipFlops/Latches                : 877
+#      FD                          : 11
+#      FD_1                        : 11
+#      FDE                         : 12
+#      FDE_1                       : 830
+#      FDR                         : 13
+# Shift Registers                  : 1
+#      SRL16E_1                    : 1
+# Clock Buffers                    : 2
+#      BUFGP                       : 2
+# IO Buffers                       : 16
+#      IBUF                        : 1
+#      OBUF                        : 15
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s200ft256-4 
+
+ Number of Slices:                     1422  out of   1920    74%  
+ Number of Slice Flip Flops:            877  out of   3840    22%  
+ Number of 4 input LUTs:               2721  out of   3840    70%  
+    Number used as logic:              2720
+    Number used as Shift registers:       1
+ Number of IOs:                          18
+ Number of bonded IOBs:                  18  out of    173    10%  
+ Number of GCLKs:                         2  out of      8    25%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+pclk                               | BUFGP                  | 853   |
+CLK                                | BUFGP                  | 25    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 17.384ns (Maximum Frequency: 57.524MHz)
+   Minimum input arrival time before clock: 3.073ns
+   Maximum output required time after clock: 8.065ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'pclk'
+  Clock period: 17.384ns (frequency: 57.524MHz)
+  Total number of paths / destination ports: 2106580 / 1659
+-------------------------------------------------------------------------
+Delay:               17.384ns (Levels of Logic = 9)
+  Source:            temp_code_4 (FF)
+  Destination:       input_buffer_52 (FF)
+  Source Clock:      pclk falling
+  Destination Clock: pclk falling
+
+  Data Path: temp_code_4 to input_buffer_52
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE_1:C->Q           44   0.720   1.948  temp_code_4 (temp_code_4)
+     LUT4:I3->O            1   0.551   0.869  tmp_segment7_or000737 (tmp_segment7_or000737)
+     LUT4:I2->O            1   0.551   0.827  tmp_segment7_or000753 (tmp_segment7_or000753)
+     LUT4:I3->O            8   0.551   1.109  tmp_segment7_or0007178 (tmp_segment7_or0007)
+     LUT4:I3->O            2   0.551   1.072  tmp_segment7_mux0001<0>23 (tmp_segment7_mux0001<0>)
+     LUT4:I1->O            3   0.551   0.933  input_buffer_and002212_SW0 (N747)
+     LUT4_D:I3->O         39   0.551   1.919  input_buffer_and002212_1 (input_buffer_and002212)
+     LUT4_D:I3->O         14   0.551   1.213  input_buffer_mux0000<100>11_41 (input_buffer_mux0000<100>11_1)
+     LUT4_D:I3->O         18   0.551   1.612  input_buffer_mux0000<792>2_16 (input_buffer_mux0000<792>215)
+     LUT3:I1->O            1   0.551   0.000  input_buffer_mux0000<522> (input_buffer_mux0000<522>)
+     FDE_1:D                   0.203          input_buffer_522
+    ----------------------------------------
+    Total                     17.384ns (5.882ns logic, 11.502ns route)
+                                       (33.8% logic, 66.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK'
+  Clock period: 9.158ns (frequency: 109.194MHz)
+  Total number of paths / destination ports: 601 / 50
+-------------------------------------------------------------------------
+Delay:               9.158ns (Levels of Logic = 4)
+  Source:            CTR_6 (FF)
+  Destination:       segment7_0 (FF)
+  Source Clock:      CLK rising
+  Destination Clock: CLK rising
+
+  Data Path: CTR_6 to segment7_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              3   0.720   1.246  CTR_6 (CTR_6)
+     LUT4:I0->O            1   0.551   1.140  AN0_not0001312 (AN0_not0001312)
+     LUT4:I0->O            5   0.551   1.260  AN0_not0001327 (AN0_not0001_bdd1)
+     LUT3:I0->O            2   0.551   0.903  AN3_not000121 (AN3_not0001_bdd0)
+     LUT4:I3->O            8   0.551   1.083  segment7_or0000_inv11 (segment7_or0000_inv)
+     FDE:CE                    0.602          segment7_0
+    ----------------------------------------
+    Total                      9.158ns (3.526ns logic, 5.632ns route)
+                                       (38.5% logic, 61.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'pclk'
+  Total number of paths / destination ports: 25 / 25
+-------------------------------------------------------------------------
+Offset:              3.073ns (Levels of Logic = 1)
+  Source:            data (PAD)
+  Destination:       Mshreg_parity1_OBUF (FF)
+  Destination Clock: pclk falling
+
+  Data Path: data to Mshreg_parity1_OBUF
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            25   0.821   1.813  data_IBUF (data_IBUF)
+     SRL16E_1:D                0.439          Mshreg_parity1_OBUF
+    ----------------------------------------
+    Total                      3.073ns (1.260ns logic, 1.813ns route)
+                                       (41.0% logic, 59.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
+  Total number of paths / destination ports: 12 / 12
+-------------------------------------------------------------------------
+Offset:              8.065ns (Levels of Logic = 1)
+  Source:            AN1 (FF)
+  Destination:       AN1 (PAD)
+  Source Clock:      CLK rising
+
+  Data Path: AN1 to AN1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             23   0.720   1.701  AN1 (AN1_OBUF)
+     OBUF:I->O                 5.644          AN1_OBUF (AN1)
+    ----------------------------------------
+    Total                      8.065ns (6.364ns logic, 1.701ns route)
+                                       (78.9% logic, 21.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'pclk'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              7.165ns (Levels of Logic = 1)
+  Source:            start1 (FF)
+  Destination:       start1 (PAD)
+  Source Clock:      pclk falling
+
+  Data Path: start1 to start1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE_1:C->Q            1   0.720   0.801  start1 (start1_OBUF)
+     OBUF:I->O                 5.644          start1_OBUF (start1)
+    ----------------------------------------
+    Total                      7.165ns (6.364ns logic, 0.801ns route)
+                                       (88.8% logic, 11.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 80.00 secs
+Total CPU time to Xst completion: 80.14 secs
+ 
+--> 
+
+Total memory usage is 325468 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

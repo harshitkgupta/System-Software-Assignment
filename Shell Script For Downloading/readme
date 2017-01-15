@@ -1,0 +1,37 @@
+NAME
+
+       Sharp-downloader - The non-interactive network downloader for leeching website.
+
+SYNOPSIS
+
+       wget [option]... 
+
+DESCRIPTION
+
+      Sharp-downloader  is a utility for non-interactive download of files from
+       the Web.	 .
+
+
+      It  has been designed for robustness over slow or unstable network
+       connections; if a download fails due to a network problem, it will keep
+       retrying until the whole file has been retrieved.  If the server sup-
+       ports regetting, it will instruct the server to continue the download
+       from where it left off.
+
+
+OPTIONS :
+	-h	Show this usage
+
+	-f 	format of files
+
+	-i 	file name
+
+	-u	url of website	
+
+	-o	output folder	
+
+
+Submitted by Harshit Kumar Gupta
+		2013EET2369
+
+

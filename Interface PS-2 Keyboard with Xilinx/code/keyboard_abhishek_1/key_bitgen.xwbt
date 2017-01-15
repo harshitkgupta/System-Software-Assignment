@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Anna\keyboard_abhishek_1\key.ncd
+OUTFILE=C:\Users\Anna\keyboard_abhishek_1\key.bit
+FAMILY=Spartan3
+PART=xc3s200-4ft256
+WORKINGDIR=C:\Users\Anna\keyboard_abhishek_1
+LICENSE=WebPack
+USER_INFO=208252893_0_0_259

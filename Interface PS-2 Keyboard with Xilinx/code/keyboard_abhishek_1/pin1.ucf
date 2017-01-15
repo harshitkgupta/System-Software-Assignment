@@ -1,0 +1,20 @@
+net "data"loc="M15";
+net "pclk"loc="M16";
+NET "pclk" CLOCK_DEDICATED_ROUTE = FALSE;
+net "segment7<7>"loc="P16";
+net "segment7<6>"loc="E14";
+net "segment7<5>"loc="G13";
+net "segment7<4>"loc="N15";
+net "segment7<3>"loc="P15";
+net "segment7<2>"loc="R16";
+net "segment7<1>"loc="F13";
+net "segment7<0>"loc="N16";
+net "an3"loc="E13";
+net "an2"loc="F14";
+net "an1"loc="G14";
+net "an0"loc="D14";
+net "clk"loc="T9";
+net "start1"loc ="P11";
+net "stop1"loc ="P12";
+net "parity1"loc ="N12";
+
